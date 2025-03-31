@@ -1,0 +1,27 @@
+{
+  "name": "cui",
+  "version": "1.0.0",
+  "description": "POC for cui portal",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/srivatsan2412/React-sriv.git"
+  },
+  "author": "Sriv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srivatsan2412/React-sriv/issues"
+  },
+  "homepage": "https://github.com/srivatsan2412/React-sriv#readme",
+  "devDependencies": {
+    "parcel": "^2.14.3"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
