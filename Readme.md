@@ -1,1 +1,22 @@
 // React Basics
+
+- Header
+  - Logo
+  - Nav Items
+- Body
+  - Search
+  - Restaurant Container
+    - Restaurant Card
+      - Image
+      - Name
+      - Rating
+      - Cuisines
+      - Delivery Time
+- footer
+  - Copyright
+  - Links
+  - Contact
+  - Address
+  - Social Media
+  - Privacy Policy
+  - Terms of Service
