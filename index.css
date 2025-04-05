@@ -20,6 +20,9 @@
 }
 
 .search {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
@@ -27,7 +30,8 @@
 .res-card {
   padding: 1rem;
   margin: 0.5rem;
-  width: 11.5rem;
+  width: 15rem;
+  height: 40rem;
   background-color: #f0f0f0;
   border: 2px solid black;
 }
@@ -49,4 +53,27 @@
 
 .filter-btn {
   margin: 1rem;
+}
+
+.filter {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+
+.schimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.schimmer-card {
+  padding: 1rem;
+  margin: 0.5rem;
+  width: 15rem;
+  height: 27rem;
+  background-color: #f0f0f0;
+}
+
+.menu {
+  padding: 1rem 5rem;
 }
