@@ -8,6 +8,10 @@
   width: 100px;
 }
 
+.nav-items {
+  padding: 2rem 0rem;
+}
+
 .nav-items > ul {
   display: flex;
   list-style-type: none;
