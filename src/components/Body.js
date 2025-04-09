@@ -38,21 +38,23 @@ const Body = () => {
     );
   }
 
+  console.log("restaurantList", restaurantList);
+
   return (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex">
+        <div className="m-4 flex gap-4">
           <input
             type="text"
             placeholder="Search for restaurants and dishes"
-            className="search-input"
+            className="border border-solid border-black w-68 p-2 rounded-lg"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="search-btn btn btn-primary"
+            className="px-4 bg-green-200 rounded-lg"
             onClick={() => {
               const filteredList = allRestaurants.filter((restaurant) =>
                 restaurant.info.name
@@ -65,27 +67,29 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn btn btn-primary"
-          onClick={() => {
-            const filteredList = restaurantList.filter(
-              (restaurant) => restaurant.info.avgRating > 4.2
-            );
-            setRestaurantList(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
-        <button
-          className="clear-all btn btn-secondary"
-          onClick={() => {
-            setRestaurantList(allRestaurants);
-          }}
-        >
-          Clear Filter
-        </button>
+        <div className="flex gap-4 m-4">
+          <button
+            className="px-4 bg-blue-300 rounded-lg"
+            onClick={() => {
+              const filteredList = restaurantList.filter(
+                (restaurant) => restaurant.info.avgRating > 4.2
+              );
+              setRestaurantList(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+          <button
+            className="px-4 bg-gray-300 rounded-lg"
+            onClick={() => {
+              setRestaurantList(allRestaurants);
+            }}
+          >
+            Clear Filter
+          </button>
+        </div>
       </div>
-      <div className="restaurant-container">
+      <div className="flex flex-wrap">
         {restaurantList.map((restuarant) => {
           return (
             <Link
