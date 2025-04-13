@@ -6,8 +6,12 @@ import About from "./components/About";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import Cart from "./components/Cart.js";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./Utils/UserContext.js";
+import { Provider } from "react-redux";
+import appStore from "./Utils/appStore.js";
+// since provider is bridge between react and redux and providing it to a react app, so it comes from react-redux
 
 // Chunking
 // Lazy loading
@@ -29,12 +33,14 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ loggedInUser: userName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -54,6 +60,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart></Cart>
       },
       {
         path: "restaurants/:id",
