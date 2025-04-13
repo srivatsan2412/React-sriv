@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { promotedRestuarantCard } from "./RestaurantCard";
 import Schimmer from "./Schimmer";
 import { useEffect, useState } from "react";
 import useRestaurantList from "../Utils/useRestaurantList";
@@ -9,6 +9,8 @@ const Body = () => {
   const allRestaurants = useRestaurantList();
   const [searchText, setSearchText] = useState("");
   const [restaurantList, setRestaurantList] = useState([]);
+
+  const RestaurantCardPromoted = promotedRestuarantCard(RestaurantCard);
 
   useEffect(() => {
     setRestaurantList(allRestaurants);
@@ -27,10 +29,6 @@ const Body = () => {
   if (restaurantList.length === 0) {
     return (
       <div className="body">
-        <div className="filter">
-          <button className="filter-btn">Top Rated Restaurants</button>
-          <button>Clear Filter</button>
-        </div>
         <div className="loading">
           <Schimmer />
         </div>
@@ -38,7 +36,9 @@ const Body = () => {
     );
   }
 
-  console.log("restaurantList", restaurantList);
+  if (!restaurantList) {
+    return;
+  }
 
   return (
     <div className="body">
@@ -96,7 +96,11 @@ const Body = () => {
               key={restuarant.info.id}
               to={"/restaurants/" + restuarant.info.id}
             >
-              <RestaurantCard resData={restuarant} />
+              {restuarant.info.avgRating >= 4.4 ? (
+                <RestaurantCardPromoted resData={restuarant} />
+              ) : (
+                <RestaurantCard resData={restuarant} />
+              )}
             </Link>
           );
         })}
