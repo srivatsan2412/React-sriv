@@ -3,7 +3,7 @@ const RestaurantCard = (props) => {
   const { resData } = props;
   const restuarantData = resData.info;
   return (
-    <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-50 hover:bg-amber-100">
+    <div data-testid="rest-card" className="m-4 p-4 w-[250px] rounded-lg bg-gray-50 hover:bg-amber-100">
       <img
         className="rounded-md"
         src={LOGO_URL + restuarantData.cloudinaryImageId}

@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { CDN_URL } from "../Utils/constants";
 import { useContext, useState } from "react";
 import useOnlineStatus from "../Utils/useOnlineStatus";
@@ -11,8 +11,7 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
 
   const cartItems = useSelector((state) => state.cart.items)
-  console.log(cartItems)
-
+  
   return (
     <div className="flex justify-between bg-pink-50 shadow-lg mb-4">
       <div>
@@ -37,7 +36,7 @@ const Header = () => {
             <Link to="/grocery">🛒 Grocery</Link>
           </li>
           <button
-            className="login btn btn-primary"
+            className="login btn btn-primary cursor-pointer"
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}

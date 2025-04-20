@@ -1,5 +1,5 @@
 import Schimmer from "./Schimmer";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../Utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategories";
 import { useState } from "react";
@@ -13,8 +13,7 @@ const RestaurantMenu = () => {
     return <Schimmer />;
   }
 
-  console.log(categories);
-
+  
   return (
     <div className="text-center">
       <h1 className="font-bold my-6 text-2xl">{restInfo.name}</h1>

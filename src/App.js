@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Cart from "./components/Cart.js";
@@ -33,12 +33,14 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <Provider store={appStore}>
+    <Provider store={appStore}>   
       <UserContext.Provider value={{ loggedInUser: userName }}>
-        <div className="app">
-          <Header />
-          <Outlet />
-        </div>
+       
+          <div className="app">
+            <Header />
+            <Outlet />
+          </div>
+        
       </UserContext.Provider>
     </Provider>
   );

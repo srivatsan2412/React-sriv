@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import RestaurantCard, { promotedRestuarantCard } from "./RestaurantCard";
 import Schimmer from "./Schimmer";
 import { useEffect, useState } from "react";
@@ -45,6 +45,7 @@ const Body = () => {
       <div className="flex">
         <div className="m-4 flex gap-4">
           <input
+            data-testid="search-input"
             type="text"
             placeholder="Search for restaurants and dishes"
             className="border border-solid border-black w-68 p-2 rounded-lg"
